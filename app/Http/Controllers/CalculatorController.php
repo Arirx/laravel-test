@@ -22,7 +22,7 @@ class CalculatorController extends Controller
 
         $result = match ($request->operation) {
             'add' => $this->service->add($request->a, $request->b),
-            'multiply' => $this->service->multiply($request->a, $request->b)
+            'multiply' => $this->service->add($request->a, $request->b)
         };
 
         return response()->json(['result' => $result]);
